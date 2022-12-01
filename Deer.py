@@ -1,34 +1,33 @@
-# Class 2
 from animal import Animal
 
 
-class Lion(Animal):
+class Deer(Animal):
     location = 'Toronto zoo '
     """
     This class inherits from the parent Animal class.
     We can override the init and other methods.
     """
 
-    def __init__(self, name, species, age, dangerous=True):
+    def __init__(self, name, species, age, antlers = False):
         super().__init__(name, species, age)
-        self.dangerous = dangerous
+        self.antlers = antlers
 
     def eat(self):
-        super(Lion, self).eat()
-        print('it ate all the meat and gained 1 lb.')
+        super(Deer, self).eat()
+        print('it ate all the herbs and gained 0.5 lb.')
 
     #modify class attribute
     @classmethod
     def move(cls, new_location):
         cls.location = new_location
-        print(f'All lions have been moved to {new_location}')
+        print(f'All deers have been moved to {new_location}')
 
     #overrides superclass method
     def describe_self(self):
-        if (self.dangerous):
-         print(f'{self.name} is a dangerous {self.species}, beware!')
+        if (self.antlers):
+         print(f'{self.name} is a {self.species} deer with beautiful antlers')
         else: 
-         print(f'{self.name} is an affective {self.species}, come pet it')
+         print(f'{self.name} is a {self.species} deer with no antlers yet...')
 
 
 # run from the terminal;

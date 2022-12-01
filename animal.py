@@ -11,7 +11,7 @@ class Animal:
         self.age = age
 
     def eat(self):
-        print(f'{self.name} has been fed')
+        print(f'All the {self.species}s have been fed')
 
     def gets_old(self):
         self.age += 1
@@ -23,3 +23,10 @@ class Animal:
     def describe_self(self):
         print(f'Hello my name is {self.name}, I am a {self.age} years old {self.species}')
         
+
+if __name__ == "__main__":
+    carnivores = Animal('Carnivore', 'feline')
+    herbivores = Animal('Herbivores', 'ruminant')
+
+    carnivores.eat()
+    herbivores.eat()
