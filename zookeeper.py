@@ -1,5 +1,3 @@
-from zoo import Zoo
-
 # Class 3
 class ZooKeeper:
     """
@@ -7,10 +5,17 @@ class ZooKeeper:
     """
 
     def __init__(self, name, zoo):
-        pass
+        self.name = name
+        self.zoo = zoo
 
     def feed_animals(self):
-        pass
+
+        if not self.zoo.animals:
+            print("There are no animals to feed. ")
+
+        for animal in self.zoo.animals:
+            if animal.hungry:
+                animal.eat()
 
     def check_health(self):
         pass
