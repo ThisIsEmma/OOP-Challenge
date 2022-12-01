@@ -8,13 +8,14 @@ class Deer(Animal):
     We can override the init and other methods.
     """
 
-    def __init__(self, name, species, age, antlers = False):
-        super().__init__(name, species, age)
+    def __init__(self, name, species, age, is_hungry = True, antlers = False):
+        super().__init__(name, species, is_hungry,  age)
         self.antlers = antlers
 
     def eat(self):
         super(Deer, self).eat()
         print('it ate all the herbs and gained 0.5 lb.')
+        self.is_hungry = False
 
     #modify class attribute
     @classmethod
@@ -35,13 +36,14 @@ class Deer(Animal):
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
-    simba = Lion('Simba', 'African Lion', 1)
-    sunny = Lion('Sunny', 'Indian feline', 4, False)
+    woody = Deer('woody', 'purple giant', 1)
+    skinny = Deer('skinny', 'rare ruminant', 4)
 
-    lions = [simba, sunny]
+    deers = [woody, skinny]
 
-    for lion in lions:
-        lion.describe_self()
-        lion.eat()
+    for deer in deers:
+        deer.describe_self()
+        deer.eat()
+        print(deer.is_hungry)
 
-    Lion.move('Vancouver')
+    Deer.move('Vancouver Zoo')

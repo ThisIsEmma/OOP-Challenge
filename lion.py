@@ -9,13 +9,14 @@ class Lion(Animal):
     We can override the init and other methods.
     """
 
-    def __init__(self, name, species, age, dangerous=True):
-        super().__init__(name, species, age)
+    def __init__(self, name, species, age, is_hungry = True, dangerous=True):
+        super().__init__(name, species, age, is_hungry)
         self.dangerous = dangerous
 
     def eat(self):
         super(Lion, self).eat()
         print('it ate all the meat and gained 1 lb.')
+        self.is_hungry = False
 
     #modify class attribute
     @classmethod
