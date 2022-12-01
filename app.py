@@ -1,63 +1,52 @@
-#Program needs 4 Classes
+# Class 1
+class Animal:
+    """
+    Parent class.
+    """
 
-# Each class need 2 methods (modify the class a) 
-
-# 1 class for main player
-# 1 class for food
-# 1 class for bomb
-# 1 class for surface 
+    def __init__(self, name, species, age):
+        pass
 
 
-# 1 - Inheritance
-# PROPS (parent class) = Food + Bomb 
-'''
-ITEM
-    Attribute:
-        game
-        name
-    methods:
-        disapear()
-        
+# Class 2
+class Lion(Animal):
+    """
+    This class inherits from the parent Animal class.
+    We can override the init and other methods.
+    """
 
-    BREADCRUM
-        name = breadcrum
-        update-score()
-        disapear()
-    CHERRY
-        randomize()
-        one-up()
-        disapear()
-    BIG-BREADCRUM
-        turn-ghost-edible()
-        disapear()
-PAC-MAN:
-    
-    current-position 
+    def __init__(self, name, species, age, dangerous=True):
+        super().__init__(name, species, age)
+        self.dangerous = dangerous
 
-    up() 
-    down()
-    left()
-    right()
-    eat()
 
-GHOST:
-    current-position
-    color
-    isEdible (Initialize to false)
+# Class 3
+class ZooKeeper:
+    """ """
 
-    up() 
-    down()
-    left()
-    right()
-    update-score()
+    def __init__(self, name, zoo):
+        pass
 
-GAME:
-    totalBreadcrum
-    totalBigBreadcrums
-    lives
-    score
-   
-   reset() - when pac dies or finish crums?
-'''
+    def feed_animals(self):
+        pass
 
-#separ
+    def check_health(self):
+        pass
+
+
+# Class 4
+class Zoo:
+    """
+    Will be composed of Animal/ZooKeeper instances
+    """
+
+    def __init__(self, name, location):
+        self.animals = list()
+        self.zookeepers = list()
+        pass
+
+    def add_animal(self, animal):
+        pass
+
+    def add_zookeeper(self, zookeeper):
+        pass
