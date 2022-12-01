@@ -1,14 +1,11 @@
-# Class 3
 class ZooKeeper:
-    """
-    Will take in a Zoo instance.
-    """
-
-    def __init__(self, name, zoo):
+    def __init__(self, name, zoo=None):
         self.name = name
         self.zoo = zoo
 
     def feed_animals(self):
+        if not self.zoo:
+            return "Not currently working at a zoo."
 
         if not self.zoo.animals:
             print("There are no animals to feed. ")
@@ -17,5 +14,6 @@ class ZooKeeper:
             if animal.hungry:
                 animal.eat()
 
-    def check_health(self):
-        pass
+    def show_off_animal(self, animal):
+        print(f"Hello, today I'd like to show you {animal.name}.")
+        print(f"{animal.name} is a {animal.species} and {animal.age} years old.")
