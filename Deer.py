@@ -8,32 +8,31 @@ class Deer(Animal):
     We can override the init and other methods.
     """
 
-    def __init__(self, name, species, age, is_hungry = True, antlers = False):
-        super().__init__(name, species, is_hungry,  age)
+    def __init__(self, name, species, age, is_hungry=True, antlers=False):
+        super().__init__(name, species, is_hungry, age)
         self.antlers = antlers
 
     def eat(self):
         super(Deer, self).eat()
-        print('it ate all the herbs and gained 0.5 lb.')
+        print("it ate all the herbs and gained 0.5 lb.")
         self.is_hungry = False
 
-    #modify class attribute
+    # modify class attribute
     @classmethod
     def group_together(cls, herd):
         if cls.is_a_herd:
             cls.herd = False
-            print(f'the deers formed a herd!')
+            print(f"the deers formed a herd!")
         else:
             cls.herd = True
-            print(f'the deers are no longer a herd...')
-        
+            print(f"the deers are no longer a herd...")
 
-    #overrides superclass method
+    # overrides superclass method
     def describe_self(self):
-        if (self.antlers):
-         print(f'{self.name} is a {self.species} deer with beautiful antlers')
-        else: 
-         print(f'{self.name} is a {self.species} deer with no antlers yet...')
+        if self.antlers:
+            print(f"{self.name} is a {self.species} deer with beautiful antlers")
+        else:
+            print(f"{self.name} is a {self.species} deer with no antlers yet...")
 
 
 # run from the terminal;
@@ -41,8 +40,8 @@ class Deer(Animal):
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
-    woody = Deer('woody', 'purple giant', 1)
-    skinny = Deer('skinny', 'rare ruminant', 4)
+    woody = Deer("woody", "purple giant", 1)
+    skinny = Deer("skinny", "rare ruminant", 4)
 
     deers = [woody, skinny]
 

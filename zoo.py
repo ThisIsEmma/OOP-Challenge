@@ -1,4 +1,6 @@
 from zookeeper import ZooKeeper
+from lion import Lion
+from deer import Deer
 
 
 class Zoo:
@@ -25,18 +27,29 @@ class Zoo:
 
     def add_zookeeper(self, zookeeper):
         self.zookeepers.append(zookeeper)
+        zookeeper.zoo = self
         print(f"{zookeeper.name} has just joined {self.name}")
 
 
 if __name__ == "__main__":
-
+    # Zoo instance
     central_park_zoo = Zoo(
         "Central Park Zoo", "East 64th Street, New York, NY 10021, United States"
     )
 
-    print(central_park_zoo.ticket_price)
-    Zoo.change_ticket_price(30)
-    print(central_park_zoo.ticket_price)
-    central_park_zoo.give_information()
-    andrew = ZooKeeper("Andrew", central_park_zoo)
+    # Animal instances
+    bambi = Deer("Bambi", "white-tailed deer", 1, True, False)
+    simba = Lion("Simba", "lion", 2, True, False)
+
+    # ZooKeeper instances
+    andrew = ZooKeeper("Andrew Pham")
+    edith = ZooKeeper("Edith Sakatia")
+
+    central_park_zoo.add_animal(bambi)
+    central_park_zoo.add_animal(simba)
+    central_park_zoo.add_zookeeper(andrew)
+
     andrew.feed_animals()
+    edith.feed_animals()
+
+    andrew.show_off_animals()
