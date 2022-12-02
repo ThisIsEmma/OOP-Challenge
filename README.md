@@ -14,3 +14,5 @@
 - Encapsulation
 - Class methods
 - Polymorphism
+
+<img src="https://i.imgur.com/5517jmI.png" width="800">
