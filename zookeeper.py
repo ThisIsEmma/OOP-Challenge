@@ -14,6 +14,6 @@ class ZooKeeper:
             if animal.hungry:
                 animal.eat()
 
-    def show_off_animal(self, animal):
-        print(f"Hello, today I'd like to show you {animal.name}.")
-        print(f"{animal.name} is a {animal.species} and {animal.age} years old.")
+    def show_off_animals(self, animal):
+        for animal in self.zoo.animals:
+            animal.describe_self()
