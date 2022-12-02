@@ -7,7 +7,7 @@ class Animal:
 
     def __init__(self, name, species, age = 1, is_hungry = True):
         self.name = name
-        self.species = species
+        self.species = species 
         self.age = age
         self.is_hungry = is_hungry
 

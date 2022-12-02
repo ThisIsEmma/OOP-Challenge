@@ -2,7 +2,7 @@ from animal import Animal
 
 
 class Deer(Animal):
-    location = 'Toronto zoo '
+    is_a_herd = True
     """
     This class inherits from the parent Animal class.
     We can override the init and other methods.
@@ -19,9 +19,14 @@ class Deer(Animal):
 
     #modify class attribute
     @classmethod
-    def move(cls, new_location):
-        cls.location = new_location
-        print(f'All deers have been moved to {new_location}')
+    def group_together(cls, herd):
+        if cls.is_a_herd:
+            cls.herd = False
+            print(f'the deers formed a herd!')
+        else:
+            cls.herd = True
+            print(f'the deers are no longer a herd...')
+        
 
     #overrides superclass method
     def describe_self(self):
@@ -46,4 +51,4 @@ if __name__ == "__main__":
         deer.eat()
         print(deer.is_hungry)
 
-    Deer.move('Vancouver Zoo')
+    Deer.group_together(False)
